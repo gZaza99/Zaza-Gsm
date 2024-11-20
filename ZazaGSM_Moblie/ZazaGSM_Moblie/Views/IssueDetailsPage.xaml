@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZazaGSM_Moblie.Views.IssueDetailsPage"
+             xmlns:vm="clr-namespace:ZazaGSM_Moblie.ViewModels"
+             Title="{Binding Title}">
+    <ContentPage.BindingContext>
+        <vm:IssueDetailsViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <RefreshView x:Name="refreshView"
+                     IsRefreshing="{Binding IsBusy}"
+                     Command="{Binding RefreshCommand}"
+                     CommandParameter="{Binding .}">
+            <ScrollView>
+                <StackLayout Padding="5">
+                    <Label Text="{Binding Association}" FontSize="24" FontAttributes="Bold"/>
+                    <Label Text="Panasz" FontSize="24" FontAttributes="Bold" Margin="0,20,0,0"/>
+                    <Label Text="{Binding Complaint}" FontSize="22"/>
+                    <Label Text="Vélemény" FontSize="24" FontAttributes="Bold" Margin="0,20,0,0"/>
+                    <Label Text="{Binding Opinion}" FontSize="22"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="85"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0"
+                               Text="Státusz"
+                               FontSize="24"
+                               FontAttributes="Bold"
+                               VerticalTextAlignment="Center"/>
+                        <Picker ItemsSource="{Binding IssueStatuses}"
+                                SelectedIndex="{Binding Status, Mode=TwoWay}"
+                                x:Name="pickerStatus"
+                                FontSize="22"
+                                Grid.Column="1"/>
+                    </Grid>
+                    <Grid HorizontalOptions="Start">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <CheckBox Grid.Column="0"
+                                  HorizontalOptions="End"
+                                  IsChecked="{Binding IsAccepted, Mode=TwoWay}"/>
+                        <Label Grid.Column="1"
+                               VerticalTextAlignment="Center"
+                               Text="Elfogadva"
+                               FontSize="22"/>
+                    </Grid>
+                    <Label Text="Státusz oka" FontSize="24" FontAttributes="Bold" Margin="0,20,0,0"/>
+                    <Entry Text="{Binding StatusReason, Mode=TwoWay}" FontSize="22"/>
+                    <Grid HorizontalOptions="Start">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <CheckBox Grid.Column="0"
+                                  HorizontalOptions="End"
+                                  IsChecked="True"
+                                  IsEnabled="False"
+                                  Color="LightPink"/>
+                        <Label Grid.Column="1"
+                               VerticalTextAlignment="Center"
+                               Text="Fizetve"
+                               FontSize="22"
+                               TextColor="LightGray"/>
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0"
+                               VerticalTextAlignment="Center"
+                               FontSize="24"
+                               FontAttributes="Bold"
+                               Text="Ajánlat"/>
+                        <Entry Grid.Column="1"
+                               VerticalTextAlignment="Center"
+                               HorizontalTextAlignment="End"
+                               FontSize="22"
+                               Text="{Binding Quotation, Mode=TwoWay}"/>
+                        <Entry Grid.Column="2"
+                               VerticalTextAlignment="Center"
+                               FontSize="22"
+                               Text="{Binding QuotationCurrency, Mode=TwoWay}"/>
+                    </Grid>
+                </StackLayout>
+            </ScrollView>
+        </RefreshView>
+    </ContentPage.Content>
+</ContentPage>

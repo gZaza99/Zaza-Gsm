@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="ErrorWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="View\CustomersView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="View\DevicesView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="View\FilterView1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="View\FilterView2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="View\MessageBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="View\NavigationView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="View\InvoicesView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="View\IssuesView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="View\SettingsView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="View\ZazaGSMForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

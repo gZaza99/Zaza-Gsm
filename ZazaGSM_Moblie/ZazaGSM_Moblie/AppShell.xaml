@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:ZazaGSM_Moblie.Views"
+       Title="ZazaGSM_Moblie"
+       x:Class="ZazaGSM_Moblie.AppShell">
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.TitleColor" Value="Black" />
+                <Setter Property="Shell.ForegroundColor" Value="Black"/>
+                <Setter Property="Shell.BackgroundColor" Value="White"/>
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+            </Style>
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <!-- 
+        When the Flyout is visible this defines the content to display in the flyout.
+        FlyoutDisplayOptions="AsMultipleItems" will create a separate flyout item for each child element    
+        https://docs.microsoft.com/dotnet/api/xamarin.forms.shellgroupitem.flyoutdisplayoptions?view=xamarin-forms
+    -->
+    <FlyoutItem Title="Devices" Icon="device.png">
+        <ShellContent Route="MainPage" ContentTemplate="{DataTemplate local:MainPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Settings" Icon="settings.png">
+        <ShellContent Route="SettingsPage" ContentTemplate="{DataTemplate local:SettingsPage}"/>
+    </FlyoutItem>
+    <FlyoutItem Title="Invoices" Icon="invoices.png">
+        <ShellContent Route="InvoicesPage" ContentTemplate="{DataTemplate local:InvoicesPage}"/>
+    </FlyoutItem>
+</Shell>

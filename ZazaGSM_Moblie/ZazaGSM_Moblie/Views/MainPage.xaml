@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZazaGSM_Moblie.Views.MainPage"
+             xmlns:vm="clr-namespace:ZazaGSM_Moblie.ViewModels"
+             xmlns:model="clr-namespace:ZazaGSM_Moblie.Models"
+             Title="{Binding Title}">
+    <ContentPage.BindingContext>
+        <vm:MainViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="Add.png" Command="{Binding AddCommand}"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <RefreshView Command="{Binding RefreshCommand}" IsRefreshing="{Binding IsBusy}">
+                <ScrollView Grid.Row="0">
+                    <StackLayout>
+                        <CollectionView ItemsSource="{Binding Devices}">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Button ImageSource="{Binding FrontImagePath}"
+                                            Text="{Binding Association}"
+                                            Clicked="OnDeviceSelected"/>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </StackLayout>
+                </ScrollView>
+            </RefreshView>
+            <Button Grid.Row="0" Text="" ImageSource="Barcode.png"
+                    HorizontalOptions="End" VerticalOptions="End"
+                    WidthRequest="60" HeightRequest="60"
+                    BackgroundColor="{StaticResource Primary}" CornerRadius="30"
+                    Margin="15,15,15,30" Clicked="OnScannTapped"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

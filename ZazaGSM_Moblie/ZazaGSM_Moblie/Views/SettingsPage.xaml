@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZazaGSM_Moblie.Views.SettingsPage"
+             xmlns:vm="clr-namespace:ZazaGSM_Moblie.ViewModels"
+             Title="{Binding Title}">
+    <ContentPage.BindingContext>
+        <vm:SettingsViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <RefreshView>
+            <ScrollView>
+                <StackLayout Padding="10">
+                    <Label Text="Adatbázis ULR vagy IP cím" FontSize="22"/>
+                    <Entry Text="{Binding DbAddress, Mode=TwoWay}"/>
+                    <Label Text="Adatbázis neve" FontSize="22"/>
+                    <Entry Text="{Binding DbName, Mode=TwoWay}"/>
+                    <Label Text="DB felhasználó neve" FontSize="22"/>
+                    <Entry Text="{Binding UsrName, Mode=TwoWay}"/>
+                    <Label Text="Db felhasználó jelszava" FontSize="22"/>
+                    <Entry Text="{Binding UsrPassword, Mode=TwoWay}"/>
+                    <Label Text="Időkorlát" FontSize="22"/>
+                    <Entry Text="{Binding ConnectionTimeout, Mode=TwoWay}"/>
+                </StackLayout>
+            </ScrollView>
+        </RefreshView>
+    </ContentPage.Content>
+</ContentPage>

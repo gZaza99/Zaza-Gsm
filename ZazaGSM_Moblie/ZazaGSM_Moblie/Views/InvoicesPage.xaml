@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:ZazaGSM_Moblie.ViewModels"
+             x:Class="ZazaGSM_Moblie.Views.InvoicesPage"
+             Title="{Binding Title}">
+    <ContentPage.BindingContext>
+        <vm:InvoicesViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="Add.png" Command="{Binding AddCommand}"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <RefreshView Command="{Binding RefreshCommand}" IsRefreshing="{Binding IsBusy}">
+            <ScrollView Grid.Row="0">
+                <StackLayout>
+                    <CollectionView ItemsSource="{Binding Invoices}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Button Text="{Binding Association}"
+                                        Clicked="OnInvoiceSelected"/>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+            </ScrollView>
+        </RefreshView>
+    </ContentPage.Content>
+</ContentPage>

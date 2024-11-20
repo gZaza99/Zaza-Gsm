@@ -1,0 +1,10 @@
+# Visual studio's own files
+/.vs/
+
+# Generated files
+*/x64/
+x64/
+bin/
+obj/
+
+/ZazaGSM_Moblie/ZazaGSM_Moblie.Android/ZazaGSM_Moblie.Android.csproj.user

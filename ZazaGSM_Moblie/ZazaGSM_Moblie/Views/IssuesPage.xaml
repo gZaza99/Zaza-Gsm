@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZazaGSM_Moblie.Views.IssuesPage"
+             xmlns:vm="clr-namespace:ZazaGSM_Moblie.ViewModels"
+             Title="{Binding Title}">
+    <ContentPage.BindingContext>
+        <vm:IssuesViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="Add.png" Command="{Binding AddCommand}"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <RefreshView IsRefreshing="{Binding IsBusy}"
+                     Command="{Binding RefreshCommand}">
+            <ScrollView>
+                <CollectionView ItemsSource="{Binding ContainerItems}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Button Text="{Binding Association}"
+                                Command="{
+                                    Binding Source={
+                                        RelativeSource AncestorType={
+                                            Type vm:IssuesViewModel
+                                        }
+                                    }, Path=IssueTapCommand
+                                }"
+                                CommandParameter="{Binding .}"/>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </ScrollView>
+        </RefreshView>
+    </ContentPage.Content>
+</ContentPage>
