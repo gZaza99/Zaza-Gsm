@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using MySqlConnector;
 using System.Data.Common;
 using System.Threading.Tasks;
+using ZazaGsm.Base;
 
 namespace ZazaGSM_Moblie.Models
 {
@@ -18,7 +19,12 @@ namespace ZazaGSM_Moblie.Models
 
         public static void LoadDevices()
         {
+#if DEBUG
+            string ConnStr = App.AppSettings.ConnectionString;
+            MySqlConnection DbConnection = new MySqlConnection(ConnStr);
+#else
             MySqlConnection DbConnection = new MySqlConnection(App.AppSettings.ConnectionString);
+#endif
             DbConnection.Open();
 
             MySqlCommand Command = DbConnection.CreateCommand();
@@ -29,6 +35,7 @@ namespace ZazaGSM_Moblie.Models
             {
                 Devices.Clear();
                 Device tempDevice;
+                DeviceImage deviceImage;
                 while (DbReader.Read())
                 {
                     if (DbReader[6] == DBNull.Value)
@@ -37,8 +44,6 @@ namespace ZazaGSM_Moblie.Models
                         tempDevice = new Device(Convert.ToInt32(DbReader[0]), (string)DbReader[6]);
 
                     tempDevice.Type = (string)DbReader[1];
-                    tempDevice.FrontImagePath = DbReader[2].ToString();
-                    tempDevice.BackImagePath = DbReader[3].ToString();
                     Devices.Add(tempDevice);
                 }
 

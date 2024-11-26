@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ZazaGSM_Moblie.Models;
 using ZazaGSM_Moblie.Views;
+using ZazaGsm.Base;
 
 namespace ZazaGSM_Moblie.ViewModels
 {

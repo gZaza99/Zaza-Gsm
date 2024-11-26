@@ -1,4 +1,6 @@
-﻿namespace ZazaGsm.Model
+﻿using ZazaGsm.Base;
+
+namespace ZazaGsm.Model
 {
     public abstract class BaseDataStore<Record> : IDataStore<Record>, IDisposable where Record : IRecord
     {

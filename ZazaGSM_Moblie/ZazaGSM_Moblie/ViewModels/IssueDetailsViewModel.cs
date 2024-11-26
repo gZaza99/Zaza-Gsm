@@ -7,6 +7,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using Xamarin.Forms;
 using ZazaGSM_Moblie.Models;
+using ZazaGsm.Base;
 
 namespace ZazaGSM_Moblie.ViewModels
 {
@@ -21,8 +22,8 @@ namespace ZazaGSM_Moblie.ViewModels
             get => _issueStatuses;
             private set => SetProperty(ref  _issueStatuses, value, nameof(IssueStatuses));
         }
-        private Models.Issue selectedIssue;
-        public Models.Issue SelectedIssue
+        private Issue selectedIssue;
+        public Issue SelectedIssue
         {
             get => selectedIssue;
             set => SetProperty(ref selectedIssue, value, nameof(SelectedIssue), OnSelectedIssueChanged);
@@ -63,12 +64,6 @@ namespace ZazaGSM_Moblie.ViewModels
             get => _status;
             set => SetProperty(ref _status, value, nameof(Status));
         }
-        private string _association;
-        public string Association
-        {
-            get => _association;
-            set => SetProperty(ref _association, value, nameof(Association));
-        }
         private string _statusReason;
         public string StatusReason
         {
@@ -82,6 +77,9 @@ namespace ZazaGSM_Moblie.ViewModels
             get => _isAccepted;
             set => SetProperty(ref _isPayed, value, nameof(IsPayed));
         }
+
+        public string Association => '#' + SelectedIssue.Key.ToString();
+
         public IssueDetailsViewModel()
         {
             string[] names = Enum.GetNames(typeof(IssueStatus));
@@ -99,12 +97,11 @@ namespace ZazaGSM_Moblie.ViewModels
 
         private void OnSelectedIssueChanged()
         {
-            Title = SelectedIssue.Device.Association;
+            Title = Association;
             Complaint = SelectedIssue.Complaint;
             Opinion = SelectedIssue.Opinion;
             Quotation = SelectedIssue.Quotation;
             QuotationCurrency = SelectedIssue.Currency;
-            Association = SelectedIssue.Association;
             StatusReason = string.IsNullOrEmpty(SelectedIssue.StatusReason) ? "Ismeretlen" : SelectedIssue.StatusReason;
             Status = SelectedIssue.Status;
             IsAccepted = SelectedIssue.IsAccepted;

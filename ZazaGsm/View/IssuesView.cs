@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using ZazaGsm.Controller;
 using ZazaGsm.Model;
+using ZazaGsm.Base;
 
 namespace ZazaGsm.View
 {

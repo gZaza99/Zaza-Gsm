@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ZazaGsm.Model;
 using ZazaGsm.View;
+using ZazaGsm.Base;
 
 namespace ZazaGsm.Controller
 {
@@ -42,8 +43,8 @@ namespace ZazaGsm.Controller
                     tempIssue.Opinion = (DbDataReader[5] is DBNull) ? string.Empty : (string)DbDataReader[5];
                     tempIssue.Quotation = (DbDataReader[6] is DBNull) ? null : (int)DbDataReader[6];
                     tempIssue.Device = Collection.DeviceDataStore.First(device => device.KeyIsSame((int)DbDataReader[7]));
-                    tempIssue.AnnouncementDate = DateOnly.FromDateTime(DateTime.Parse(DbDataReader[8].ToString()));
-                    tempIssue.ClosingDate = (DbDataReader[9] is DBNull) ? null : DateOnly.FromDateTime(DateTime.Parse((string)DbDataReader[9]));
+                    tempIssue.AnnouncementDate = DateTime.Parse(DbDataReader[8].ToString());
+                    tempIssue.ClosingDate = (DbDataReader[9] is DBNull) ? null : DateTime.Parse((string)DbDataReader[9]);
                     _ = Issues.Add(tempIssue);
                 }
                 Task.Run(() =>
@@ -93,8 +94,8 @@ namespace ZazaGsm.Controller
                 OriginalIssue.Opinion = (DbDataReader[5] is DBNull) ? string.Empty : (string)DbDataReader[5];
                 OriginalIssue.Quotation = (DbDataReader[6] is DBNull) ? null : (int)DbDataReader[6];
                 OriginalIssue.Device = Collection.DeviceDataStore.First(device => device.KeyIsSame((int)DbDataReader[7]));
-                OriginalIssue.AnnouncementDate = DateOnly.FromDateTime(DateTime.Parse(DbDataReader[8].ToString()));
-                OriginalIssue.ClosingDate = (DbDataReader[9] is DBNull) ? null : DateOnly.FromDateTime(DateTime.Parse((string)DbDataReader[9]));
+                OriginalIssue.AnnouncementDate = DateTime.Parse(DbDataReader[8].ToString());
+                OriginalIssue.ClosingDate = (DbDataReader[9] is DBNull) ? null : DateTime.Parse((string)DbDataReader[9]);
                 DbDataReader.Close();
                 _ = DbDataReader.DisposeAsync();
             }

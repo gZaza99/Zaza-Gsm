@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZazaGsm.Controller;
 using ZazaGsm.Model;
+using ZazaGsm.Base;
 
 namespace ZazaGsm.View
 {

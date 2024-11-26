@@ -11,6 +11,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using ZazaGSM_Moblie.Views;
 using System.IO;
+using ZazaGsm.Base;
 
 namespace ZazaGSM_Moblie.ViewModels
 {
@@ -26,8 +27,8 @@ namespace ZazaGSM_Moblie.ViewModels
         {
             Title = "ZazaGSM Mobil";
             
-            AddCommand = new Xamarin.Forms.Command(OnAddDevice);
-            RefreshCommand = new Xamarin.Forms.Command(OnRefresh);
+            //AddCommand = new Xamarin.Forms.Command(OnAddDevice);
+            //RefreshCommand = new Xamarin.Forms.Command(OnRefresh);
         }
 
         public async void OnAddDevice()
@@ -36,7 +37,10 @@ namespace ZazaGSM_Moblie.ViewModels
             if (string.IsNullOrEmpty(deviceType))
                 return;
 
-            Device newDevice = new Device(deviceType);
+            Device newDevice = new Device()
+            {
+                Type = deviceType,
+            };
             bool success;
             try
             {
@@ -107,7 +111,7 @@ namespace ZazaGSM_Moblie.ViewModels
             AppShell.Current.Navigation.PushAsync(page);
         }
 
-        private async void OnDeviceScanned(Device device)
+        private async void OnDeviceScanned(ZazaGsm.Base.Device device)
         {
             Device searchedDevice = Devices.FirstOrDefault(currentDevice => currentDevice.Barcode == device.Barcode);
             if (searchedDevice == null)

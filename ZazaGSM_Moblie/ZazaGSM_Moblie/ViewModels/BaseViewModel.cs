@@ -4,15 +4,16 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
+using ZazaGsm.Base;
 
 namespace ZazaGSM_Moblie.ViewModels
 {
     public abstract class BaseViewModel : INotifyPropertyChanged
     {
-        public ObservableCollection<Models.Customer> Customers { get; } = Models.Collection.Customers;
-        public ObservableCollection<Models.Invoice> Invoices { get; } = Models.Collection.Invoices;
-        public ObservableCollection<Models.Device> Devices { get; } = Models.Collection.Devices;
-        public ObservableCollection<Models.Issue> Issues { get; } = Models.Collection.Issues;
+        public ObservableCollection<Customer> Customers { get; } = Models.Collection.Customers;
+        public ObservableCollection<Invoice> Invoices { get; } = Models.Collection.Invoices;
+        public ObservableCollection<Device> Devices { get; } = Models.Collection.Devices;
+        public ObservableCollection<Issue> Issues { get; } = Models.Collection.Issues;
 
         bool isBusy = false;
         public bool IsBusy

@@ -4,6 +4,7 @@ using System.Diagnostics;
 using ZazaGsm.Controller;
 using ZazaGsm.Model;
 using ZazaGsm.View;
+using ZazaGsm.Base;
 
 namespace ZazaGsm
 {
@@ -80,6 +81,7 @@ namespace ZazaGsm
         {
             try
             {
+                // Loading order is important!
                 customersPage.TryRefresh();
                 devicesPage.TryRefresh();
                 issuesPage.TryRefresh();

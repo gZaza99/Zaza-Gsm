@@ -7,6 +7,7 @@ using ZazaGsm.Model;
 using MySqlConnector;
 using System.Diagnostics;
 using ZazaGsm.View;
+using ZazaGsm.Base;
 using System.Security.Cryptography;
 using System.Windows.Forms;
 

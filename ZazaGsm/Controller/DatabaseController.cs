@@ -1,5 +1,6 @@
 ﻿using ZazaGsm.Model;
 using MySqlConnector;
+using ZazaGsm.Base;
 
 namespace ZazaGsm.Controller
 {

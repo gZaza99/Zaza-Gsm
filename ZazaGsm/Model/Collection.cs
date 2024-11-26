@@ -1,4 +1,6 @@
-﻿namespace ZazaGsm.Model
+﻿using ZazaGsm.Base;
+
+namespace ZazaGsm.Model
 {
     public static class Collection
     {

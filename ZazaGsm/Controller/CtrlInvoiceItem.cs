@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ZazaGsm.Model;
 using ZazaGsm.View;
+using ZazaGsm.Base;
 
 namespace ZazaGsm.Controller
 {
@@ -45,7 +46,7 @@ namespace ZazaGsm.Controller
                     tempIssue = (issueId != null) ? Issues.FirstOrDefault(current => current.KeyIsSame((int)issueId)) : null;
                     tempInvoiceItem.ItemsStatus = (InvoiceStatus)((sbyte)DbReader[6] - 1);
                     tempInvoiceItem.IsPurchase = Convert.ToBoolean(DbReader[7]);
-                    tempInvoiceItem.PaymentDate = (DbReader[8] is DBNull) ? null : DateOnly.FromDateTime(DateTime.Parse(DbReader[8].ToString()));
+                    tempInvoiceItem.PaymentDate = (DbReader[8] is DBNull) ? null : DateTime.Parse(DbReader[8].ToString());
                     if (tempInvoice != null)
                     {
                         tempInvoiceItem.Invoice = tempInvoice;

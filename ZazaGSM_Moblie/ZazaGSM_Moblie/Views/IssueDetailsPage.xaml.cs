@@ -7,13 +7,14 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using ZazaGSM_Moblie.ViewModels;
+using ZazaGsm.Base;
 
 namespace ZazaGSM_Moblie.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class IssueDetailsPage : ContentPage
 	{
-		public Models.Issue? SelectedIssue
+		public Issue? SelectedIssue
 		{
 			get => viewModel.SelectedIssue;
 			set => viewModel.SelectedIssue = value;
@@ -28,7 +29,7 @@ namespace ZazaGSM_Moblie.Views
 			BindingContext = viewModel = new IssueDetailsViewModel();
 			refreshView.Refreshing += viewModel.OnRefreshing;
         }
-        public IssueDetailsPage(Models.Issue selectedIssue)
+        public IssueDetailsPage(Issue selectedIssue)
         {
             InitializeComponent();
             BindingContext = viewModel = new IssueDetailsViewModel();
@@ -41,7 +42,7 @@ namespace ZazaGSM_Moblie.Views
 
         private void ViewModel_ErrorMessage(string message)
         {
-            Device.BeginInvokeOnMainThread(async () =>
+            Xamarin.Forms.Device.BeginInvokeOnMainThread(async () =>
             {
                 await DisplayAlert("Mentési hiba", message, "Ok");
             });

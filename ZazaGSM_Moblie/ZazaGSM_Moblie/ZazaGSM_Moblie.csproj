@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Numerics\Numerics.vcxproj" />
+    <ProjectReference Include="..\..\Base\Base.csproj" />
   </ItemGroup>
 
   <ItemGroup>

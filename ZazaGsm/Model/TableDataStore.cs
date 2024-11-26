@@ -1,4 +1,6 @@
-﻿namespace ZazaGsm.Model
+﻿using ZazaGsm.Base;
+
+namespace ZazaGsm.Model
 {
     public class TableDataStore<Table> : BaseDataStore<Table> where Table : TableRecord
     {
