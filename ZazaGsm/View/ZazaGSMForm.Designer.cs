@@ -31,10 +31,11 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ZazaGSMForm));
             navPanel = new Panel();
+            navigationPanel = new ZazaGsm.View.NavigationView();
             btnReload = new Button();
             mainPanel = new Panel();
             PanelMessage = new Panel();
-            MessageBar1 = new View.MessageBar();
+            MessageBar1 = new ZazaGsm.View.MessageBar();
             ToolTip = new ToolTip(components);
             navPanel.SuspendLayout();
             mainPanel.SuspendLayout();
@@ -43,19 +44,29 @@
             // 
             // navPanel
             // 
+            navPanel.Controls.Add(navigationPanel);
             navPanel.Controls.Add(btnReload);
             navPanel.Dock = DockStyle.Bottom;
-            navPanel.Location = new Point(0, 641);
+            navPanel.Location = new Point(0, 631);
             navPanel.Name = "navPanel";
             navPanel.Padding = new Padding(10);
-            navPanel.Size = new Size(754, 102);
+            navPanel.Size = new Size(754, 112);
             navPanel.TabIndex = 0;
+            // 
+            // navigationPanel
+            // 
+            navigationPanel.Location = new Point(143, 0);
+            navigationPanel.Name = "navigationPanel";
+            navigationPanel.Padding = new Padding(5);
+            navigationPanel.Size = new Size(469, 101);
+            navigationPanel.TabIndex = 1;
             // 
             // btnReload
             // 
+            btnReload.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnReload.BackgroundImage = (Image)resources.GetObject("btnReload.BackgroundImage");
             btnReload.BackgroundImageLayout = ImageLayout.Zoom;
-            btnReload.Location = new Point(658, 8);
+            btnReload.Location = new Point(656, 8);
             btnReload.Name = "btnReload";
             btnReload.Size = new Size(86, 86);
             btnReload.TabIndex = 0;
@@ -70,7 +81,7 @@
             mainPanel.Dock = DockStyle.Fill;
             mainPanel.Location = new Point(0, 0);
             mainPanel.Name = "mainPanel";
-            mainPanel.Size = new Size(754, 641);
+            mainPanel.Size = new Size(754, 631);
             mainPanel.TabIndex = 1;
             // 
             // PanelMessage
@@ -119,5 +130,6 @@
         private ToolTip ToolTip;
         private Panel PanelMessage;
         private View.MessageBar MessageBar1;
+        private View.NavigationView navigationPanel;
     }
 }

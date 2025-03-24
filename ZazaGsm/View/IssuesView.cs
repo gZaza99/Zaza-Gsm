@@ -138,17 +138,6 @@ namespace ZazaGsm.View
         {
             FilterView.OnResize(e);
 
-            TxtbQuotation.Location = new Point(PanelDetails.ClientSize.Width - TxtbQuotation.Size.Width - 5, TxtbQuotation.Location.Y);
-            TxtbQuoCurrency.Location = new Point(PanelDetails.ClientSize.Width - TxtbQuoCurrency.Size.Width - 5, TxtbQuoCurrency.Location.Y);
-            CheckPayed.Location = new Point(PanelDetails.ClientSize.Width - 179 - CheckPayed.Size.Width, CheckPayed.Location.Y);
-            TxtbCustomer.Location = new Point(PanelDetails.ClientSize.Width - TxtbCustomer.Size.Width - 5, TxtbCustomer.Location.Y);
-            DtpClosing.Location = new Point(PanelDetails.ClientSize.Width - DtpClosing.Size.Width - 5, DtpClosing.Location.Y);
-
-            LblQuotation.Location = new Point(PanelDetails.ClientSize.Width - 2 * 5 - TxtbQuotation.Size.Width - LblQuotation.Size.Width, LblQuotation.Location.Y);
-            LblQuoCurrency.Location = new Point(PanelDetails.ClientSize.Width - 2 * 5 - TxtbQuoCurrency.Size.Width - LblQuoCurrency.Size.Width, LblQuoCurrency.Location.Y);
-            LblCustomer.Location = new Point(PanelDetails.ClientSize.Width - 2 * 5 - TxtbCustomer.Size.Width - LblCustomer.Size.Width, LblCustomer.Location.Y);
-            LblClosing.Location = new Point(PanelDetails.ClientSize.Width - 2 * 5 - DtpClosing.Size.Width - LblClosing.Size.Width, LblClosing.Location.Y);
-
             int threshold = LblQuotation.Location.X - 5;
             TxtbComplaint.Size = new Size(threshold / 2 - 10, TxtbComplaint.Size.Height);
             TxtbOpinion.Size = new Size(threshold / 2 - 10, TxtbOpinion.Size.Height);

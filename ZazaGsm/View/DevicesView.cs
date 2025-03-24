@@ -5,7 +5,7 @@ using ZazaGsm.Base;
 
 namespace ZazaGsm.View
 {
-    public partial class DevicesView : UserControl, IResizable
+    public partial class DevicesView : UserControl
     {
         public CtrlDevice Controller { get; set; }
 
@@ -66,11 +66,6 @@ namespace ZazaGsm.View
                 Controller.LoadData();
             Clear();
             AddDevices(Collection.DeviceDataStore);
-        }
-
-        public Task OnResize(DrawableSizeEventArgs e)
-        {
-            return Task.CompletedTask;
         }
 
         private void BtnInvoices_Click(object sender, EventArgs e)

@@ -11,18 +11,11 @@ using ZazaGsm.Model;
 
 namespace ZazaGsm.View
 {
-    public partial class MessageBar : UserControl, IResizable
+    public partial class MessageBar : UserControl
     {
         public MessageBar()
         {
             InitializeComponent();
-        }
-
-        public Task OnResize(DrawableSizeEventArgs e)
-        {
-            Size = new Size(e.PanelSize.Width - e.PanelPadding, Size.Height);
-            BtnClose.Location = new Point(ClientSize.Width - BtnClose.Width);
-            return Task.CompletedTask;
         }
     }
 }

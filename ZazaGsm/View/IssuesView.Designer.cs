@@ -105,6 +105,7 @@
             // 
             // DtpAnnouncement
             // 
+            DtpAnnouncement.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             DtpAnnouncement.Format = DateTimePickerFormat.Custom;
             DtpAnnouncement.Location = new Point(180, 202);
             DtpAnnouncement.Name = "DtpAnnouncement";
@@ -114,6 +115,7 @@
             // 
             // DtpClosing
             // 
+            DtpClosing.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             DtpClosing.Format = DateTimePickerFormat.Custom;
             DtpClosing.Location = new Point(586, 202);
             DtpClosing.Name = "DtpClosing";
@@ -123,6 +125,7 @@
             // 
             // LblClosing
             // 
+            LblClosing.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             LblClosing.AutoSize = true;
             LblClosing.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             LblClosing.Location = new Point(435, 198);
@@ -133,6 +136,7 @@
             // 
             // LblAnnouncement
             // 
+            LblAnnouncement.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             LblAnnouncement.AutoSize = true;
             LblAnnouncement.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             LblAnnouncement.Location = new Point(5, 198);
@@ -143,6 +147,7 @@
             // 
             // TxtbCustomer
             // 
+            TxtbCustomer.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             TxtbCustomer.Enabled = false;
             TxtbCustomer.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             TxtbCustomer.Location = new Point(522, 155);
@@ -153,6 +158,7 @@
             // 
             // LblCustomer
             // 
+            LblCustomer.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             LblCustomer.AutoSize = true;
             LblCustomer.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             LblCustomer.Location = new Point(447, 158);
@@ -163,6 +169,7 @@
             // 
             // CheckPayed
             // 
+            CheckPayed.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             CheckPayed.AutoSize = true;
             CheckPayed.CheckAlign = ContentAlignment.MiddleRight;
             CheckPayed.Enabled = false;
@@ -176,6 +183,7 @@
             // 
             // TxtbQuoCurrency
             // 
+            TxtbQuoCurrency.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             TxtbQuoCurrency.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             TxtbQuoCurrency.Location = new Point(522, 77);
             TxtbQuoCurrency.Name = "TxtbQuoCurrency";
@@ -185,6 +193,7 @@
             // 
             // LblQuoCurrency
             // 
+            LblQuoCurrency.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             LblQuoCurrency.AutoSize = true;
             LblQuoCurrency.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             LblQuoCurrency.Location = new Point(450, 80);
@@ -195,6 +204,7 @@
             // 
             // TxtbQuotation
             // 
+            TxtbQuotation.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             TxtbQuotation.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             TxtbQuotation.Location = new Point(522, 37);
             TxtbQuotation.Name = "TxtbQuotation";
@@ -204,6 +214,7 @@
             // 
             // LblQuotation
             // 
+            LblQuotation.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             LblQuotation.AutoSize = true;
             LblQuotation.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             LblQuotation.Location = new Point(443, 40);
@@ -214,6 +225,7 @@
             // 
             // TxtbOpinion
             // 
+            TxtbOpinion.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             TxtbOpinion.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             TxtbOpinion.Location = new Point(211, 37);
             TxtbOpinion.Name = "TxtbOpinion";
@@ -224,6 +236,7 @@
             // 
             // TxtbComplaint
             // 
+            TxtbComplaint.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             TxtbComplaint.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             TxtbComplaint.Location = new Point(5, 37);
             TxtbComplaint.Name = "TxtbComplaint";
@@ -234,6 +247,7 @@
             // 
             // LblOpinion
             // 
+            LblOpinion.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             LblOpinion.AutoSize = true;
             LblOpinion.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             LblOpinion.Location = new Point(211, 6);
@@ -244,6 +258,7 @@
             // 
             // LblComplaint
             // 
+            LblComplaint.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             LblComplaint.AutoSize = true;
             LblComplaint.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             LblComplaint.Location = new Point(5, 6);

@@ -28,13 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DevicesView));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DevicesView));
             panel1 = new Panel();
-            splitContainer1 = new SplitContainer();
-            BtnInvoices = new Button();
             FilterView = new FilterView2();
             PictureBox = new PictureBox();
             panel2 = new Panel();
@@ -43,11 +41,8 @@
             ColFrontImagePath = new DataGridViewTextBoxColumn();
             ColBackImagePath = new DataGridViewTextBoxColumn();
             ColBarcode = new DataGridViewTextBoxColumn();
+            BtnInvoices = new Button();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
-            splitContainer1.Panel1.SuspendLayout();
-            splitContainer1.Panel2.SuspendLayout();
-            splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)PictureBox).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Grid).BeginInit();
@@ -55,56 +50,27 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(splitContainer1);
+            panel1.Controls.Add(BtnInvoices);
+            panel1.Controls.Add(FilterView);
+            panel1.Controls.Add(PictureBox);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(772, 124);
             panel1.TabIndex = 0;
             // 
-            // splitContainer1
-            // 
-            splitContainer1.Dock = DockStyle.Fill;
-            splitContainer1.FixedPanel = FixedPanel.Panel2;
-            splitContainer1.Location = new Point(0, 0);
-            splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            splitContainer1.Panel1.Controls.Add(BtnInvoices);
-            splitContainer1.Panel1.Controls.Add(FilterView);
-            // 
-            // splitContainer1.Panel2
-            // 
-            splitContainer1.Panel2.Controls.Add(PictureBox);
-            splitContainer1.Size = new Size(772, 124);
-            splitContainer1.SplitterDistance = 564;
-            splitContainer1.TabIndex = 0;
-            // 
-            // BtnInvoices
-            // 
-            BtnInvoices.BackgroundImage = (Image)resources.GetObject("BtnInvoices.BackgroundImage");
-            BtnInvoices.BackgroundImageLayout = ImageLayout.Stretch;
-            BtnInvoices.Location = new Point(455, 23);
-            BtnInvoices.Name = "BtnInvoices";
-            BtnInvoices.Size = new Size(86, 86);
-            BtnInvoices.TabIndex = 5;
-            BtnInvoices.UseVisualStyleBackColor = true;
-            BtnInvoices.Click += BtnInvoices_Click;
-            // 
             // FilterView
             // 
-            FilterView.Dock = DockStyle.Fill;
             FilterView.Location = new Point(0, 0);
             FilterView.Name = "FilterView";
-            FilterView.Size = new Size(564, 124);
+            FilterView.Size = new Size(394, 124);
             FilterView.TabIndex = 0;
             // 
             // PictureBox
             // 
+            PictureBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             PictureBox.BackColor = SystemColors.ControlLightLight;
-            PictureBox.Dock = DockStyle.Fill;
-            PictureBox.Location = new Point(0, 0);
+            PictureBox.Location = new Point(568, 0);
             PictureBox.Name = "PictureBox";
             PictureBox.Size = new Size(204, 124);
             PictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -183,6 +149,18 @@
             ColBarcode.MinimumWidth = 6;
             ColBarcode.Name = "ColBarcode";
             // 
+            // BtnInvoices
+            // 
+            BtnInvoices.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            BtnInvoices.BackgroundImage = (Image)resources.GetObject("BtnInvoices.BackgroundImage");
+            BtnInvoices.BackgroundImageLayout = ImageLayout.Stretch;
+            BtnInvoices.Location = new Point(455, 21);
+            BtnInvoices.Name = "BtnInvoices";
+            BtnInvoices.Size = new Size(86, 86);
+            BtnInvoices.TabIndex = 5;
+            BtnInvoices.UseVisualStyleBackColor = true;
+            BtnInvoices.Click += BtnInvoices_Click;
+            // 
             // DevicesView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -192,10 +170,6 @@
             Name = "DevicesView";
             Size = new Size(772, 483);
             panel1.ResumeLayout(false);
-            splitContainer1.Panel1.ResumeLayout(false);
-            splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
-            splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)PictureBox).EndInit();
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)Grid).EndInit();
@@ -205,15 +179,14 @@
         #endregion
 
         private Panel panel1;
-        private SplitContainer splitContainer1;
         private Panel panel2;
         private DataGridView Grid;
         private FilterView2 FilterView;
         private PictureBox PictureBox;
-        private Button BtnInvoices;
         private DataGridViewTextBoxColumn ColType;
         private DataGridViewTextBoxColumn ColFrontImagePath;
         private DataGridViewTextBoxColumn ColBackImagePath;
         private DataGridViewTextBoxColumn ColBarcode;
+        private Button BtnInvoices;
     }
 }

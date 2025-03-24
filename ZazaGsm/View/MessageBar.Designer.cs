@@ -44,6 +44,7 @@
             // 
             // BtnClose
             // 
+            BtnClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnClose.BackgroundImage = Properties.Resources.cross;
             BtnClose.BackgroundImageLayout = ImageLayout.Stretch;
             BtnClose.Cursor = Cursors.Hand;

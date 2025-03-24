@@ -80,6 +80,7 @@
             // 
             // inpDbAddress
             // 
+            inpDbAddress.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             inpDbAddress.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
             inpDbAddress.Location = new Point(8, 43);
             inpDbAddress.Name = "inpDbAddress";
@@ -89,6 +90,7 @@
             // 
             // inpDbName
             // 
+            inpDbName.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             inpDbName.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
             inpDbName.Location = new Point(8, 125);
             inpDbName.Name = "inpDbName";
@@ -98,6 +100,7 @@
             // 
             // inpUsrName
             // 
+            inpUsrName.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             inpUsrName.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
             inpUsrName.Location = new Point(8, 207);
             inpUsrName.Name = "inpUsrName";
@@ -107,6 +110,7 @@
             // 
             // inpUsrPassword
             // 
+            inpUsrPassword.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             inpUsrPassword.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
             inpUsrPassword.Location = new Point(8, 289);
             inpUsrPassword.Name = "inpUsrPassword";

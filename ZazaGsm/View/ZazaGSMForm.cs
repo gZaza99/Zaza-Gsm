@@ -17,7 +17,6 @@ namespace ZazaGsm
         private readonly DevicesView devicesPage;
         private readonly IssuesView issuesPage;
         private readonly InvoicesView invoicesPage;
-        private readonly NavigationView navigationPanel;
 
         public static Settings AppSettings = new();
 
@@ -36,7 +35,6 @@ namespace ZazaGsm
             devicesPage = new DevicesView();
             issuesPage = new IssuesView();
             invoicesPage = new InvoicesView();
-            navigationPanel = new NavigationView();
             CurrentPage = typeof(SettingsView);
 
             issuesPage.ShowMessage += ShowMessage;
@@ -114,8 +112,6 @@ namespace ZazaGsm
 
         private void PostInitilalization()
         {
-            navPanel.Controls.Add(navigationPanel);
-
             mainPanel.Controls.Add(settingsPage);
             settingsPage.Dock = DockStyle.Fill;
 
@@ -156,16 +152,9 @@ namespace ZazaGsm
             var args = new DrawableSizeEventArgs(mainPanel.ClientSize, mainPanel.Padding.Horizontal);
 
             _ = navigationPanel.OnResize(new DrawableSizeEventArgs(navPanel.ClientSize, navPanel.Padding.Horizontal));
-            _ = settingsPage.OnResize(args);
             _ = issuesPage.OnResize(args);
-            _ = devicesPage.OnResize(args);
             _ = invoicesPage.OnResize(args);
             _ = customersPage.OnResize(args);
-            _ = MessageBar1.OnResize(args);
-
-            btnReload.Location = new Point(
-                navPanel.ClientSize.Width - navPanel.Padding.Horizontal - btnReload.Size.Width,
-                btnReload.Location.Y);
         }
 
         private void BtnReload_Click(object sender, EventArgs e)

@@ -14,7 +14,7 @@ using ZazaGsm.Base;
 
 namespace ZazaGsm.View
 {
-    public partial class SettingsView : UserControl, IResizable
+    public partial class SettingsView : UserControl
     {
         public SettingsView()
         {
@@ -66,19 +66,6 @@ namespace ZazaGsm.View
                         inpUsrPassword.Text = ZazaGSMForm.AppSettings.UsrPassword;
                     break;
             }
-        }
-
-        public Task OnResize(DrawableSizeEventArgs e)
-        {
-            if (e == EventArgs.Empty)
-                throw new Exception($"Method {nameof(SettingsView)}.{nameof(OnResize)} got unexpected eventarguments!");
-
-            inpDbAddress.Width = e.PanelSize.Width - 2 * e.PanelPadding - 2 * this.Padding.Horizontal;
-            inpUsrName.Width = e.PanelSize.Width - 2 * e.PanelPadding - 2 * this.Padding.Horizontal;
-            inpDbName.Width = e.PanelSize.Width - 2 * e.PanelPadding - 2 * this.Padding.Horizontal;
-            inpUsrPassword.Width = e.PanelSize.Width - 2 * e.PanelPadding - 2 * this.Padding.Horizontal;
-
-            return Task.CompletedTask;
         }
 
         private void Inp_Leave(object sender, EventArgs e)
